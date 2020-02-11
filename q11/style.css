@@ -1,0 +1,101 @@
+ul {
+    list-style-type: none;
+    margin-left: 150px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    width: 1000px;
+    }
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+
+.whiteDiv{
+    border: white; 
+    background-color: white; 
+    height: 1100px; 
+    width: 1100px; 
+    margin-left: 120px; 
+}
+
+.innerDiv{
+    border-style: groove;
+    color: #454747;
+    background-color: #454747;
+    width: 760px;
+    height: 360px;
+    padding-top: 20px;
+    margin-left: 150px;
+}
+
+.greyArea{
+    width: 760px;
+    height: 80px;
+    background-color: gainsboro;
+    margin-left: 150px;
+}
+
+.firstCard{
+    width: 180px;
+    height: 315px;
+    background-color: #454747;
+    margin-left: 150px;
+    display: inline-block;
+}
+.secondCard{
+    width: 180px;
+    height: 315px;
+    background-color: #454747;
+    margin-left: 10px;
+    display: inline-block;
+}
+.imageCaption1{
+    margin-left: 150px;
+    background-color: gainsboro;
+    width: 180px;
+    height: 30px;
+    margin-top: -25px;
+    display: block;
+}
+.imageCaption2{
+    margin-left: 345px;
+    background-color: gainsboro;
+    width: 180px;
+    height: 30px;
+    margin-top: -50px;
+}
+.imageCaption3{
+    margin-left: 538px;
+    background-color: gainsboro;
+    width: 180px;
+    height: 30px;
+    margin-top: -50px;
+}
+.imageCaption4{
+    margin-left: 733px;
+    background-color: gainsboro;
+    width: 180px;
+    height: 30px;
+    margin-top: -50px;
+}
+.footer{
+    border: #333333; 
+    background-color: #333333; 
+    height: 40px; 
+    width: 1100px; 
+    margin-left: 120px; 
+
+}
