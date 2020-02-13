@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 5</title>
+    <script>
+        var arr = [];    
+        function Employee()
+        {
+            
+            var Employee1 = new Object();
+            var ename = document.getElementById("ename");
+            var eage = document.getElementById("eage");
+            var esalary = document.getElementById("esalary");
+            var edob = document.getElementById("edob");
+            Employee1.name=ename.value;
+            Employee1.age = eage.value;
+            Employee1.Salary = esalary.value;
+            Employee1.dob = edob.value;
+            arr[arr.length]=Employee1;
+            
+            var table1 = document.getElementById("table1");
+                    var row = table1.insertRow(arr.length);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    cell1.innerHTML = arr[arr.length-1].name;
+                    cell2.innerHTML = arr[arr.length-1].age;
+                    cell3.innerHTML = arr[arr.length-1].Salary;
+                    cell4.innerHTML = arr[arr.length-1].dob;
+
+        }
+        function filterEmployee()
+        {
+            
+            var femp = arr.filter(function(ele){
+                
+                    return ele.Salary>5000;
+
+            });
+            
+            var table = document.getElementById("table");
+            var rows = table.getElementsByTagName("tr");
+            var diff = (femp.length-rows.length)+1;
+            if(diff!=0)
+            {       
+                console.log(diff);
+            
+                    for(var i=femp.length-diff+1;i<=femp.length;i++)
+                    {
+                        var row = table.insertRow(i);
+                        var cell1 = row.insertCell(0);
+                        var cell2 = row.insertCell(1);
+                        var cell3 = row.insertCell(2);
+                        var cell4 = row.insertCell(3);
+                        cell1.innerHTML = femp[i-1].name;
+                        cell2.innerHTML = femp[i-1].age;
+                        cell3.innerHTML = femp[i-1].Salary;
+                        cell4.innerHTML = femp[i-1].dob;
+
+
+                    }
+                }
+        }
+                    function updateData()
+            {
+                for(var i=0;i<arr.length;i++)
+                {
+                    if(arr[i].age>20 && arr[i].Salary<1000)
+                        arr[i].Salary = (arr[i].Salary)*5;
+                }
+            }
+            function fetchEMP()
+            {
+                var temp = arr.filter(function(ele)
+                {
+                    return ((ele.Salary)<1000 && (ele.age>20));
+                });
+                var table = document.getElementById("table2");
+                var rows = table2.getElementsByTagName("tr")
+                var diff = (temp.length-rows.length)+1;
+                if(diff!=0)
+                {       
+                    console.log(diff);
+                
+                        for(var i=temp.length-diff+1;i<=temp.length;i++)
+                        {
+                            var row = table2.insertRow(i);
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
+                            var cell5 = row.insertCell(4);
+                            cell1.innerHTML = temp[i-1].name;
+                            cell2.innerHTML = temp[i-1].age;
+                            cell3.innerHTML = temp[i-1].Salary;
+                            cell4.innerHTML = (temp[i-1].Salary)*5;
+                            cell5.innerHTML = temp[i-1].dob;
+
+
+                        }
+                    updateData();
+                    var table1 = document.getElementById("table1");
+                    var table = document.getElementById("table");
+                    var rowlen1 = table1.rows.length;
+                    var rowlen2 = table.rows.length;
+                    for(var i=rowlen1-1;i>=1;i--)
+                        table1.deleteRow(i);
+                        for(var i=1;i<=arr.length;i++)
+                        {
+                            var row = table1.insertRow(i);
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+                            var cell3 = row.insertCell(2);
+                            var cell4 = row.insertCell(3);
+                            cell1.innerHTML = arr[i-1].name;
+                            cell2.innerHTML = arr[i-1].age;
+                            cell3.innerHTML = arr[i-1].Salary;
+                            cell4.innerHTML = arr[i-1].dob;
+                        }
+                        for(var i=rowlen2-1;i>=1;i--)
+                        table.deleteRow(i);
+                        
+                    }
+
+            }
+    function sort_by_age(){
+                    var temp=arr.sort(function(a,b){
+                           return a.age - b.age
+                        })
+                        
+    var table = document.getElementById("table3");
+    var rows = table3.getElementsByTagName("tr")
+    var diff = (temp.length-rows.length)+1;
+    if(diff!=0)
+    {      
+        console.log(diff);
+       
+            for(var i=temp.length-diff+1;i<=temp.length;i++)
+            {
+                var row = table3.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                cell1.innerHTML = temp[i-1].name;
+                cell2.innerHTML = temp[i-1].age;
+                cell3.innerHTML = temp[i-1].Salary;
+                cell4.innerHTML = temp[i-1].dob;
+
+
+            }
+
+        
+            }
+    }
+
+    </script>
+    <style> 
+            table,tr,td,th{
+                
+                border-collapse: collapse;
+            }
+            table{
+                width:100%;
+            }
+            th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th{
+         background-color: #4CAF50;
+      color: white;
+    
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    
+        </style>
+</head>
+<body>
+    <label>Employee Name:</label><br><input type="text" id="ename"><br>
+           <label>Employee  Age:</label><br><input type="number" id="eage"><br>
+           <label>Employee Salary:</label><br><input type="number" id="esalary"><br>
+           <label>DOB</label><br><input type="text" id="edob"><br>
+
+           <button onclick="Employee()">Add Employee</button><br><br>
+        <table id="table1">
+            <thead>
+                <th>Employee Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>DOB</th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+    
+        </table>
+        <hr>
+        <h4>filter all employees with salary greater than 5000<br></h4>
+           <button onclick="filterEmployee()">Filter</button><br><br>
+           <table id="table">
+            <thead>
+                <th>Employee Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>DOB</th>
+            </thead>
+            <tbody>
+                
+            </tbody>
+    
+        </table><br>
+        <hr>
+        <br>
+       <h4>group employee on the basis of their age</h4><br>
+       <button onclick="sort_by_age()">Group by</button><br><br>
+       <table id="table3">
+        <thead>
+            <th>Employee Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>DOB</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+
+    </table><br>
+        <br>
+        <hr>
+       <h4>fetch employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.</h4><br>
+       <button onclick="fetchEMP()">Increment</button><br><br>
+       <table id="table2">
+        <thead>
+            <th>Employee Name</th>
+            <th>Age</th>
+            <th>Old Salary</th>
+            <th>Incremented Salary</th>
+            <th>DOB</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+
+    </table><br>
+
+
+</body>
+</html>

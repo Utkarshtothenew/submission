@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+    <script>
+        function palin(){
+            var st= document.getElementById('string').value;
+            var start=0;
+            var end=st.length-1;
+            while(start<end){
+                if(st.charAt(start++)!=st.charAt(end--)){
+                    alert('Not Palindrome');
+                    return;;
+                
+                 }
+             }
+            alert('Palindrome');
+        }
+    </script>
+</head>
+<body>
+    Enter the String<input type="text" id="string">
+    <input type="submit" name="submit" id="submit" onclick="palin()">
+    
+</body>
+</html>
