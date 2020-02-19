@@ -1,11 +1,35 @@
 public class q2 {
-    public static void main(String[] args)
-    {
-        String st="Hello I am Utkarsh. Hello Everyone";
-                String[] s1=st.split(" ");
-        String s2=st.replace("Hello"," ");
-        String[] s3=s2.split(" ");
-        int l=s1.length-s3.length;
-        System.out.println("Number of Occurences of a word"+l);
+
+    public static void main(String[] args) {
+
+        String st = "edcba";
+        int j = 0;
+        char temp = 0;
+
+        char[] chars = st.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+
+            for (j = 0; j < chars.length; j++) {
+
+                if (chars[j] > chars[i]) {
+                    temp = chars[i];
+                    chars[i] = chars[j];
+                    chars[j] = temp;
+                }
+
+            }
+
+        }
+
+        for(int k = 0; k < chars.length; k++)
+        {
+            System.out.println(chars[k]);
+        }
+
     }
+
 }
+
+
+

@@ -1,11 +1,24 @@
 public class q6 {
-    public static void main(String[] args) {
-        int a[]={1,1,2,3,2,4,5,4,5};
-        int output = 0;
-        for(int i=0;i<a.length;i++)
-        {
-            output = output ^ a[i];
+    public static void main(String args[]){
+        try{
+            int arr[]=new int[7];
+            arr[9]=30/0;
+            System.out.println("Last Statement of try block");
         }
-        System.out.println(output);
+        catch(ArithmeticException e){
+            System.out.println("You should not divide a number by zero");
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Accessing array elements outside of the limit");
+        }
+        catch(Exception e){
+            System.out.println("Some Other Exception");
+        }
+        finally
+        {
+
+            System.out.println("Finally block");
+        }
     }
+
 }

@@ -1,22 +1,28 @@
 public class q7 {
-    static{
-        String FName="Utkarsh";
-
-
-        System.out.println(FName);
-
-
-    }
-    static int age =21;
-    public static void printLNAme(String name)
+    static void Convert(int n)
     {
-        System.out.println(name);
+        int day = n / (24 * 3600);
+
+        n = n % (24 * 3600);
+        int hour = n / 3600;
+
+        n %= 3600;
+        int minutes = n / 60 ;
+
+        n %= 60;
+        int seconds = n;
+
+        System.out.println( day + " " + "days " + hour
+                + " " + "hours " + minutes + " "
+                + "minutes " + seconds + " "
+                + "seconds ");
     }
 
-    public static void main(String[] args) {
-        q7 a=new q7();
-        a.printLNAme("Singh");
-        System.out.println(q7.age);
+    public static void main (String[] args)
+    {
+        int n = 1800345;
+        Convert(n);
+
     }
 
 }
